@@ -65,16 +65,20 @@ $$
 \dot{p}(t)
 \end{bmatrix} = M
 \begin{bmatrix}
-z(t) \\ p(t)
+z(t) \\
+p(t)
 \end{bmatrix} + 
 \begin{bmatrix}
-m_1 \\ m_2
+m_1 \\ 
+m_2
 \end{bmatrix}, \quad 
 \begin{bmatrix}
-z(0) \\ p(T)
+z(0) \\
+p(T)
 \end{bmatrix} = 
 \begin{bmatrix}
-0 \\ p_1
+0 \\ 
+p_1
 \end{bmatrix}
 $$
 
