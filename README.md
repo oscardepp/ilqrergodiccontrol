@@ -35,10 +35,6 @@ $$
 
 Update control using Armijo line search.
 
-![image](https://github.com/user-attachments/assets/2d259f4b-afdd-4e60-855c-33adab013e01)
-
-
-
 ---
 
 The system can be expressed with:
@@ -88,6 +84,68 @@ $$
 
 Expressions for $a_z(t)$, $b_v(t)$, matrix $M$, vectors $m_1$, $m_2$, and how to compute $v(t)$ from $p(t)$, $z(t)$.
 
+
+Rearranging (7) to get $ \int_0^T l_1(z(t),v(t)) dt + p_1^T z(T)$
+
+$$\int_0^T \underbrace{D_1 l(x(t)^{[k]},u(t)^{[k]})\cdot z(t) + D_2 l(x(t)^{[k]}, u(t)^{[k]})\cdot v(t) + z(t)^TQ_z z(t) + v(t)^T R_v v(t)}_{\color{red}{l'(z(t),v(t))}} dt + \underbrace{Dm(x(T)^{[k]}\cdot z(T)}_{\color{red}{p_1^T\cdot z(T)}} $$
+
+Factoring:
+$$l'(z(t),v(t)) =(a_x(t) + z(t)^TQ_z)z(t) + (b_u(t)+v(t)^TR_v)v(t) $$
+
+Taking a couple directional derivatives gives us
+
+$$ Dl'(z(t),v(t)) = a_x(t) +2Q_zz(t) + b_u(t) +2R_vv(t)$$
+
+Therefore
+
+$$\boxed{a_z(t)  = D_1 l'(z(t),v(t)) = a_x(t) + 2Q_zz(t)  }$$
+
+$$\boxed{b_v(t)  = D_2 l'(z(t),v(t)) = b_u(t) +2R_vv(t)  }$$
+
+Using equation (1), we can factor to isolate for $b_v(t)$ and isolate for $v(t)$ later on.
+
+$$p(t)^TB(t) + b_v(t)^T = 0$$
+We find that $b_v(t)^T = -p(t)^TB(t)$, so $b_v(t) = -B(t)^Tp(t)$.
+Plugging in what we know about $b_v(t)$, we get
+
+$$b_u(t) + 2R_vv(t) = -B^Tp$$
+
+$$2R_vv(t) = -B^Tp -b_u(t)$$
+
+$$v(t) = -\frac{1}{2}R_v^{-1}B^Tp-\frac{1}{2}R_v^{-1}b_u(t)$$
+
+$$ = -\frac{1}{2}R_v^{-1}(B^Tp+b_u(t))$$
+
+Now we can substitute $v(t)$ and $a_z(t)$ in the $\dot{z}(t)$ and $\dot{p}(t)$ expressions.
+
+$$\dot{z}(t) = A(t)z(t) + B(t)v(t) $$
+$$\dot{p}(t) = -A(t)^Tp(t) -a_z(t) $$
+
+$$\dot{z}(t) = Az = B(-\frac{1}{2}R_v^{-1}B^Tp-\frac{1}{2}R_v^{-1}b_u)$$
+$$\dot{p}(t) = -A^Tp -2Q_zz-a_x $$
+
+In matrix form, in the form $\dot{\mathbf{x}} = M\mathbf{x} + m$
+
+$$
+\boxed{
+\begin{bmatrix}
+\dot{z}(t)\\
+\dot{p}(t)
+\end{bmatrix} = \begin{bmatrix}
+A & -\frac{1}{2} B R_v^{-1}B^T \\
+-2Q_z & -A^T
+\end{bmatrix}
+\begin{bmatrix}
+z(t) \\
+p(t)
+\end{bmatrix} +
+ \begin{bmatrix}
+-\frac{1}{2}BR_v^{-1}b_u \\
+-a_x
+\end{bmatrix}}
+$$
+
+
 ---
 
 Minimize:
@@ -113,6 +171,10 @@ Procedure Armijo(x[k], eta0, alpha, beta)
     return x[k] + eta * z[k]
 end procedure
 ```
+
+![image](https://github.com/user-attachments/assets/2d259f4b-afdd-4e60-855c-33adab013e01)
+
+
 
 ---
 
