@@ -59,8 +59,7 @@ $$
 
 This leads to a two-point boundary value problem (TPBVP):
 
-$$
-\begin{bmatrix}
+$$\begin{bmatrix}
 \dot{z}(t) \\
 \dot{p}(t)
 \end{bmatrix}
