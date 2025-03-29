@@ -178,9 +178,9 @@ end procedure
 
 ---
 
-## 3rd problem
+## 3. 
 
-Apply iLQR to a differential drive robot with time \( T = 2\pi \) to track:
+Apply iLQR to a differential drive robot with time $ T = 2\pi $ to track:
 
 $$
 (x_d(t), y_d(t), \theta_d(t)) = \left( \frac{4}{2\pi}t, 0, \frac{\pi}{2} \right)
@@ -201,13 +201,5 @@ u_2
 (x(0), y(0), \theta(0)) = (0, 0, \frac{\pi}{2})
 $$
 
-**Turn in:**
-- Three runs with different initial control trajectories and objective parameters
-- One trajectory must use \( [1, -0.5] \) for the full horizon
-- For each run:
-  1. Plot the initial and final trajectory
-  2. Plot optimal control signals
-  3. Plot objective function vs. iteration
-  4. List the parameters used
+![image](https://github.com/user-attachments/assets/74b8809d-41d3-4bad-89d2-0534a0e32507)
 
-📎 iLQR template: [Google Drive Link](https://drive.google.com/file/d/1Br8DArJtnEZXjZok2aWh7PMVoTuRq1hc/view?usp=sharing)
