@@ -82,7 +82,7 @@ p_1
 \end{bmatrix}
 $$
 
-Expressions for $ a_z(t) $, $ b_v(t) $, matrix $ M $, vectors $ m_1 $, $ m_2 $, and how to compute $ v(t) $ from $ p(t) $, $ z(t) $.
+Expressions for $a_z(t)$, $b_v(t)$, matrix $M$, vectors $m_1$, $m_2$, and how to compute $v(t)$ from $p(t)$, $z(t)$.
 
 ---
 
