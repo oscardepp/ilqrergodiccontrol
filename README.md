@@ -9,7 +9,7 @@ $$
 \dot{x}(t) = f(t, x(t), u(t)), \quad x(0) = x_0
 $$
 
-we want to compute the optimal control signal \( u(t) \) to track a desired trajectory \( x_d(t) \) over the time horizon \( [0, T] \). The optimal control problem is:
+we want to compute the optimal control signal $ u(t) $ to track a desired trajectory $ x_d(t) $ over the time horizon $[0, T] $. The optimal control problem is:
 
 $$
 u^*(t) = \arg\min_{u(t)} J(u(t)) = \arg\min_{u(t)} \int_0^T \left[ (x(t) - x_d(t))^\top Q_x (x(t) - x_d(t)) + u(t)^\top R_u u(t) \right] dt + (x(T) - x_d(T))^\top P_1 (x(T) - x_d(T))
@@ -21,7 +21,7 @@ $$
 x(t) = x_0 + \int_0^t f(x(\tau), u(\tau)) d\tau
 $$
 
-This can be solved via iterative LQR (iLQR). In iteration \( k \), given \( u^{[k]}(t) \) and corresponding \( x^{[k]}(t) \), compute the optimal descent direction \( v^{[k]}(t) \):
+This can be solved via iterative LQR (iLQR). In iteration $ k $, given $ u^{[k]}(t) $ and corresponding $ x^{[k]}(t) $, compute the optimal descent direction $ v^{[k]}(t) $:
 
 $$
 v^{[k]}(t) = \arg\min_{v(t)} \int_0^T \left[ a_x(t)^\top z(t) + b_u(t)^\top v(t) \right] dt + p_1^\top z(T) + \int_0^T \left[ z(t)^\top Q_z z(t) + v(t)^\top R_v v(t) \right] dt
@@ -36,8 +36,6 @@ $$
 Update control using Armijo line search.
 
 ---
-
-## Problem 1 (20 pts)
 
 The system can be expressed with:
 
@@ -87,11 +85,9 @@ p_1
 \end{bmatrix}
 $$
 
-**Turn in:** Expressions for \( a_z(t) \), \( b_v(t) \), matrix \( M \), vectors \( m_1 \), \( m_2 \), and how to compute \( v(t) \) from \( p(t) \), \( z(t) \).
+ Expressions for $ a_z(t) $, $ b_v(t) $, matrix $ M $, vectors $ m_1 $, $ m_2 $, and how to compute $ v(t) $ from $ p(t) $, $ z(t) $.
 
 ---
-
-## Problem 2 (20 pts)
 
 Minimize:
 
@@ -100,8 +96,8 @@ x^* = \arg\min_x f(x) = \arg\min_x \left[ 0.26(x_1^2 + x_2^2) - 0.46 x_1 x_2 \ri
 $$
 
 Use gradient descent with Armijo line search:
-- Initial guess: \( x = [-4, -2] \)
-- Parameters: \( \alpha = 10^{-4}, \beta = 0.5, \eta_0 = 1 \)
+- Initial guess: $ x = [-4, -2] $
+- Parameters: $ \alpha = 10^{-4}, \beta = 0.5, \eta_0 = 1 $
 - Run for 100 iterations
 
 **Turn in:** A plot showing the trajectory of iterations over the contour plot of \( f(x) \).
