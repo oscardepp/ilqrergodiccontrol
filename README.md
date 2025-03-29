@@ -178,7 +178,7 @@ end procedure
 
 ---
 
-## 3. Optimla Control Application
+## 3. Optimal Control Application
 
 Apply iLQR to a differential drive robot with time $ T = 2\pi $ to track:
 
@@ -202,4 +202,28 @@ u_2
 $$
 
 ![image](https://github.com/user-attachments/assets/74b8809d-41d3-4bad-89d2-0534a0e32507)
+
+--- 
+
+## 4. Ergodic Control 
+
+Work in Progress
+
+#### 1. First order control system dynamics 
+
+$$
+\dot{x}(t) = f(x(t),u(t)) = u(t)
+$$
+![image](https://github.com/user-attachments/assets/f14f44c7-d718-41ee-abd6-6d0ee80c1e79)
+
+#### 2. Second order control system dynamics
+
+$$
+\ddot{x}(t)= f(x(t),u(t)) = u(t)
+$$
+
+
+![image](https://github.com/user-attachments/assets/5c4d88fc-1077-4fba-b9b8-8f6b9c06e4eb)
+
+
 
