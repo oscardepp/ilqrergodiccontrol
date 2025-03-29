@@ -99,12 +99,11 @@ Use gradient descent with Armijo line search:
 - Parameters: $ \alpha = 10^{-4}, \beta = 0.5, \eta_0 = 1 $
 - Run for 100 iterations
 
-**Turn in:** A plot showing the trajectory of iterations over the contour plot of \( f(x) \).
 
 ### Algorithm: Armijo Line Search (Pseudocode)
 
 ```
-procedure Armijo(x[k], eta0, alpha, beta)
+Procedure Armijo(x[k], eta0, alpha, beta)
     eta = eta0
     z[k] = -grad J(x[k])
     while J(x[k] + eta * z[k]) > J(x[k]) + alpha * eta * grad J(x[k])^T z[k] do
@@ -115,7 +114,7 @@ end procedure
 
 ---
 
-## Problem 3 (60 pts)
+## 3rd problem
 
 Apply iLQR to a differential drive robot with time \( T = 2\pi \) to track:
 
