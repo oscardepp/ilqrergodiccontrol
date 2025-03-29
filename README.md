@@ -126,13 +126,11 @@ $$
 
 with dynamics:
 
-$$
-\begin{bmatrix}
+$$\begin{bmatrix}
 \dot{x} \\
 \dot{y} \\
 \dot{\theta}
-\end{bmatrix}
-=
+\end{bmatrix} =
 \begin{bmatrix}
 \cos(\theta) u_1 \\
 \sin(\theta) u_1 \\
