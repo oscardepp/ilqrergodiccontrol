@@ -178,7 +178,7 @@ end procedure
 
 ---
 
-## 3. 
+## 3. Optimla Control Application
 
 Apply iLQR to a differential drive robot with time $ T = 2\pi $ to track:
 
