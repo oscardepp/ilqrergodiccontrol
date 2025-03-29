@@ -35,6 +35,10 @@ $$
 
 Update control using Armijo line search.
 
+![image](https://github.com/user-attachments/assets/2d259f4b-afdd-4e60-855c-33adab013e01)
+
+
+
 ---
 
 The system can be expressed with:
