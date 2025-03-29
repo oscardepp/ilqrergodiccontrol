@@ -57,34 +57,28 @@ $$
 z(0) = 0, \quad p(T) = p_1
 $$
 
-This leads to a two-point boundary value problem (TPBVP):
+This leads to a two-point boundary value problem (TPBVP): 
 
-$$\begin{bmatrix}
+$$
+\begin{bmatrix}
 \dot{z}(t) \\
 \dot{p}(t)
-\end{bmatrix}
-=
-M \begin{bmatrix}
-z(t) \\
-p(t)
-\end{bmatrix}
-+
+\end{bmatrix} = M
 \begin{bmatrix}
-m_1 \\
-m_2
-\end{bmatrix}, \quad
+z(t) \\ p(t)
+\end{bmatrix} + 
 \begin{bmatrix}
-z(0) \\
-p(T)
-\end{bmatrix}
-=
+m_1 \\ m_2
+\end{matrix}, \quad 
 \begin{bmatrix}
-0 \\
-p_1
+z(0) \\ p(T)
+\end{bmatrix} = 
+\begin{bmatrix}
+0 \\ p_1
 \end{bmatrix}
 $$
 
- Expressions for $ a_z(t) $, $ b_v(t) $, matrix $ M $, vectors $ m_1 $, $ m_2 $, and how to compute $ v(t) $ from $ p(t) $, $ z(t) $.
+Expressions for $ a_z(t) $, $ b_v(t) $, matrix $ M $, vectors $ m_1 $, $ m_2 $, and how to compute $ v(t) $ from $ p(t) $, $ z(t) $.
 
 ---
 
