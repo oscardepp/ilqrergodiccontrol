@@ -69,7 +69,7 @@ z(t) \\ p(t)
 \end{bmatrix} + 
 \begin{bmatrix}
 m_1 \\ m_2
-\end{matrix}, \quad 
+\end{bmatrix}, \quad 
 \begin{bmatrix}
 z(0) \\ p(T)
 \end{bmatrix} = 
