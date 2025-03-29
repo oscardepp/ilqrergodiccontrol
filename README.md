@@ -9,7 +9,7 @@ $$
 \dot{x}(t) = f(t, x(t), u(t)), \quad x(0) = x_0
 $$
 
-we want to compute the optimal control signal $ u(t) $ to track a desired trajectory $ x_d(t) $ over the time horizon $[0, T] $. The optimal control problem is:
+we want to compute the optimal control signal $u(t)$ to track a desired trajectory $ x_d(t) $ over the time horizon $[0, T] $. The optimal control problem is:
 
 $$
 u^*(t) = \arg\min_{u(t)} J(u(t)) = \arg\min_{u(t)} \int_0^T \left[ (x(t) - x_d(t))^\top Q_x (x(t) - x_d(t)) + u(t)^\top R_u u(t) \right] dt + (x(T) - x_d(T))^\top P_1 (x(T) - x_d(T))
@@ -21,7 +21,7 @@ $$
 x(t) = x_0 + \int_0^t f(x(\tau), u(\tau)) d\tau
 $$
 
-This can be solved via iterative LQR (iLQR). In iteration $ k $, given $ u^{[k]}(t) $ and corresponding $ x^{[k]}(t) $, compute the optimal descent direction $ v^{[k]}(t) $:
+This can be solved via iterative LQR (iLQR). In iteration $k$, given $u^{[k]}(t)$ and corresponding $ x^{[k]}(t) $, compute the optimal descent direction $ v^{[k]}(t) $:
 
 $$
 v^{[k]}(t) = \arg\min_{v(t)} \int_0^T \left[ a_x(t)^\top z(t) + b_u(t)^\top v(t) \right] dt + p_1^\top z(T) + \int_0^T \left[ z(t)^\top Q_z z(t) + v(t)^\top R_v v(t) \right] dt
